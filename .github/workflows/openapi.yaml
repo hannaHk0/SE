@@ -1,6 +1,6 @@
 name: Validate OpenAPI Specification
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   validate-openapi:
@@ -9,14 +9,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
         with:
-          node-version: '20'
+          distribution: 'temurin'
+          java-version: '21' 
 
-      - name: Install OpenAPI Validator
-        run: npm install -g @apidevtools/swagger-cli
+      - name: Build with Maven
+        run: mvn clean install
 
-      - name: Validate OpenAPI definition
-        run: swagger-cli validate Projekt/src/main/resources/openapi.yaml
