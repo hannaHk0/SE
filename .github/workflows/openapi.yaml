@@ -1,12 +1,6 @@
 name: Validate OpenAPI Specification
 
-on:
-  push:
-    paths:
-      - 'openapi.yaml'
-  pull_request:
-    paths:
-      - 'openapi.yaml'
+on: [push]
 
 jobs:
   validate-openapi:
