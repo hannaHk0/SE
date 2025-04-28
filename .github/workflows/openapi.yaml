@@ -19,4 +19,4 @@ jobs:
         run: npm install -g @apidevtools/swagger-cli
 
       - name: Validate OpenAPI definition
-        run: swagger-cli validate .github/workflows/openapi.yaml
+        run: swagger-cli validate Projekt/src/main/resources/openapi.yaml
