@@ -15,7 +15,7 @@ public class StartupBeam {
     public void init(){
         DefaultApi defaultApi = new DefaultApi();
         GameInputDto gameInput = new GameInputDto();
-        gameInput.setGroupName ("zgediu");
+        gameInput.setGroupName ("Spiel 1");
 
         GameDto response = defaultApi.gamePost(gameInput);
     }
